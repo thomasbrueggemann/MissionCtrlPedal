@@ -12,6 +12,7 @@ public:
 	Preset retrievePreset(byte bank, byte preset);
 
 private:
+	int getStartingAddress(byte bank, byte preset)
 };
 
 #endif // PRESETSTORE_H

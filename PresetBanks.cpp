@@ -17,11 +17,13 @@ void PresetBanks::setPreset(byte preset)
 void PresetBanks::bankUp()
 {
 	currentBank = (currentBank + 1) % MAX_BANKS;
+	setPreset(0);
 }
 
 void PresetBanks::bankDown()
 {
 	currentBank = (currentBank - 1 + MAX_BANKS) % MAX_BANKS;
+	setPreset(0);
 }
 
 byte PresetBanks::getCurrentBank()
