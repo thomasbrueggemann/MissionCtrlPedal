@@ -8,8 +8,8 @@ class PresetStore
 public:
 	PresetStore();
 
-	void storePreset(byte bank, byte preset, Preset &payload);
-	Preset retrievePreset(byte bank, byte preset);
+	void writePreset(byte bank, byte preset, Preset &payload);
+	Preset readPreset(byte bank, byte preset);
 
 private:
 	int getStartingAddress(byte bank, byte preset)

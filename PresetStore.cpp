@@ -35,7 +35,7 @@ PresetStore::PresetStore()
 {
 }
 
-void PresetStore::storePreset(byte bank, byte preset, Preset &payload)
+void PresetStore::writePreset(byte bank, byte preset, Preset &payload)
 {
 	int startingAddress = getStartingAddress(bank, preset);
 
@@ -47,7 +47,7 @@ void PresetStore::storePreset(byte bank, byte preset, Preset &payload)
 	EEPROM.update(startingAddress + AMPSWITCH_ADDRESS, payload.AmpSwitch);
 }
 
-Preset PresetStore::retrievePreset(byte bank, byte preset)
+Preset PresetStore::readPreset(byte bank, byte preset)
 {
 	Preset p;
 

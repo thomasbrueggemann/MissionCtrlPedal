@@ -2,15 +2,27 @@
 #define FOOTSWITCHES_H
 
 #include "Button2.h"
+#include "Banks.h"
 
 class Footswitches
 {
 public:
-	Footswitches();
+	Footswitches(Banks &banks);
+	void check();
 
 private:
-	Button2 buttonA;
-	Button2 buttonB;
+	Button2 footswitch1;
+	Button2 footswitch2;
+	Button2 footswitch3;
+	Button2 footswitch4;
+
+	Banks &banks;
+
+	void checkFootswitch(Button2 &btn, byte footswitchId);
+
+	void handlePress(byte footswitchId);
+	void handleDoublePress(byte footswitchId);
+	void handleLongPress(byte footswitchId);
 };
 
 #endif // FOOTSWITCHES_H
