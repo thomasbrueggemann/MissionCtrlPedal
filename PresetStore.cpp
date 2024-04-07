@@ -22,8 +22,12 @@ EEPROM address format
 3 = treble
 4 = boost
 5 = ampswitch
-6 = cut, preset 1, bank 0
-7 = ...
+6 reserved
+7 reserved
+8 reserved
+9 reserved
+10 = cut, preset 1, bank 0
+11 = ...
 
 */
 

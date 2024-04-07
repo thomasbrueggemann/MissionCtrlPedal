@@ -1,37 +1,37 @@
-#include "PresetBanks.h"
+#include "Banks.h"
 
 #define MAX_BANKS 10
 #define MAX_PRESETS 4
 
-PresetBanks::PresetBanks()
+Banks::Banks()
 {
 	currentBank = 0;
 	currentPreset = 0;
 }
 
-void PresetBanks::setPreset(byte preset)
+void Banks::setPreset(byte preset)
 {
 	currentPreset = preset;
 }
 
-void PresetBanks::bankUp()
+void Banks::bankUp()
 {
 	currentBank = (currentBank + 1) % MAX_BANKS;
 	setPreset(0);
 }
 
-void PresetBanks::bankDown()
+void Banks::bankDown()
 {
 	currentBank = (currentBank - 1 + MAX_BANKS) % MAX_BANKS;
 	setPreset(0);
 }
 
-byte PresetBanks::getCurrentBank()
+byte Banks::getCurrentBank()
 {
 	return currentBank;
 }
 
-byte PresetBanks::getCurrentPreset()
+byte Banks::getCurrentPreset()
 {
 	return currentPreset;
 }

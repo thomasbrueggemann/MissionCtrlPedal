@@ -1,10 +1,10 @@
 #ifndef BANKS_H
 #define BANKS_H
 
-class PresetBanks
+class Banks
 {
 public:
-	PresetBanks();
+	Banks();
 
 	void setPreset(byte preset);
 	void bankUp();

@@ -1,14 +1,8 @@
-#include "Button2.h"
 #include "PresetBanks.h"
 
 #define BAUD_RATE 115200
-#define LONG_PRESS_TIME 800
 
-#define BUTTON_PIN_A 2
-#define BUTTON_PIN_B 3
-
-PresetBanks presetBanks;
-Button2 buttonA(BUTTON_PIN_A), buttonB(BUTTON_PIN_B);
+Banks presetBanks;
 
 void handlePress(Button2 &btn)
 {
