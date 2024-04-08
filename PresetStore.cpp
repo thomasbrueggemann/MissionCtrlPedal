@@ -2,16 +2,6 @@
 
 #include <EEPROM.h>
 
-#define NUM_PRESETS_PER_BANK 4
-#define NUM_BYTES_PER_PRESET 12
-
-#define CUT_ADDRESS 0
-#define BASS_ADDRESS 1
-#define MIDDLE_ADDRESS 2
-#define TREBLE_ADDRESS 3
-#define BOOST_ADDRESS 4
-#define AMPSWITCH_ADDRESS 5
-
 /*
 
 EEPROM address format

@@ -4,8 +4,9 @@
 
 #define BAUD_RATE 115200
 
+LED leg;
 SegmentDisplay segmentDisplay;
-Banks banks(segmentDisplay);
+Banks banks(leg, segmentDisplay);
 Footswitches footswitches(banks);
 
 void setup()

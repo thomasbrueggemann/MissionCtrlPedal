@@ -1,13 +1,6 @@
 #include "Footswitches.h"
 #include "Button2.h"
 
-#define LONG_PRESS_TIME 800
-
-#define FOOTSWITCH_PIN_1 2
-#define FOOTSWITCH_PIN_2 3
-#define FOOTSWITCH_PIN_3 4
-#define FOOTSWITCH_PIN_4 5
-
 Footswitches::Footswitches(Banks &banks)
 	: banks(banks), footswitch1(FOOTSWITCH_PIN_1), footswitch2(FOOTSWITCH_PIN_2), footswitch3(FOOTSWITCH_PIN_3), footswitch4(FOOTSWITCH_PIN_4)
 {

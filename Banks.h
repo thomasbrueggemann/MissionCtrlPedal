@@ -1,8 +1,13 @@
 #ifndef BANKS_H
 #define BANKS_H
 
+#include <Arduino.h>
+
 #include "SegmentDisplay.h"
 #include "LED.h"
+
+#define MAX_BANKS 10
+#define MAX_PRESETS 4
 
 class Banks
 {

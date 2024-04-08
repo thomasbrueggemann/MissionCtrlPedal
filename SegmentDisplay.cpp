@@ -1,13 +1,5 @@
 #include "SegmentDisplay.h"
 
-#define SEGMENT_A_PIN 7
-#define SEGMENT_B_PIN 6
-#define SEGMENT_C_PIN 5
-#define SEGMENT_D_PIN 11
-#define SEGMENT_E_PIN 10
-#define SEGMENT_F_PIN 8
-#define SEGMENT_G_PIN 9
-
 SegmentDisplay::SegmentDisplay()
 {
 	pinMode(SEGMENT_A_PIN, OUTPUT);

@@ -1,8 +1,5 @@
 #include "Banks.h"
 
-#define MAX_BANKS 10
-#define MAX_PRESETS 4
-
 Banks::Banks(LED &led, SegmentDisplay &segmentDisplay) : segmentDisplay(segmentDisplay), led(led)
 {
 	currentBank = 0;
