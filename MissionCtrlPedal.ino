@@ -4,6 +4,8 @@
 #include "LED.h"
 #include "SettingsButtons.h"
 
+#include <Arduino.h>
+
 #define BAUD_RATE 115200
 
 LED leg;
@@ -15,6 +17,7 @@ SettingsButtons settingsButtons;
 void setup()
 {
 	Serial.begin(BAUD_RATE);
+	SPI.begin();
 }
 
 void loop()

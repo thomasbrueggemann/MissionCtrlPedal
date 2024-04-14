@@ -2,6 +2,7 @@
 #define LED_H
 
 #include <Arduino.h>
+#include "Pins.h"
 
 class LED
 {

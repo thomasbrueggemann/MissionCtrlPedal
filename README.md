@@ -13,8 +13,8 @@
 | Preset storage and recall | ✅          |        |
 | Segment Display           | ✅          |        |
 | Preset LEDs               | ✅          |        |
-| Amp Switching             |             |        |
-| Bypass Setting            |             |        |
+| Amp Switching             | ✅          |        |
+| Bypass Setting            | ✅          |        |
 | Digital Pot Setting       |             |        |
 | Fader position set        |             |        |
 | Fader capacitative touch  |             |        |

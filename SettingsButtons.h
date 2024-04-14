@@ -2,17 +2,11 @@
 #define SETTINGSBUTTON_H
 
 #include "Button2.h"
+#include "Pins.h"
 #include <EEPROM.h>
 
-#define AMPSWITCH_BUTTON_PIN 44
-#define AMPSWITCH_LED_PIN 45
 #define AMPSWITCH_ADDRESS 2000
-#define AMPSWITCH_RELAY_PIN 48
-
-#define BYPASS_BUTTON_PIN 46
-#define BYPASS_LED_PIN 47
 #define BYPASS_ADDRESS 2001
-#define BYPASS_RELAY_PIN 49
 
 class SettingsButtons
 {
