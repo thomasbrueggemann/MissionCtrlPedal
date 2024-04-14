@@ -1,6 +1,8 @@
 #include "Banks.h"
 #include "Footswitches.h"
 #include "SegmentDisplay.h"
+#include "LED.h"
+#include "SettingsButtons.h"
 
 #define BAUD_RATE 115200
 
@@ -8,6 +10,7 @@ LED leg;
 SegmentDisplay segmentDisplay;
 Banks banks(leg, segmentDisplay);
 Footswitches footswitches(banks);
+SettingsButtons settingsButtons;
 
 void setup()
 {
@@ -17,6 +20,5 @@ void setup()
 void loop()
 {
 	footswitches.check();
-
-	delay(10);
+	settingsButtons.check();
 }

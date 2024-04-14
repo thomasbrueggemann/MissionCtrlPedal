@@ -19,4 +19,4 @@
 | Fader position set        |             |        |
 | Fader capacitative touch  |             |        |
 | Fader preset saving       |             |        |
-| Settings Button           |             |        |
+| Settings Button           | ✅          |        |
