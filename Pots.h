@@ -18,8 +18,8 @@ class Pots
 {
 public:
 	Pots();
-	void setToPreset(Preset &preset);
-	void setValue(Pot pot, int value);
+	void SetToPreset(Preset &preset);
+	void SetValue(Pot pot, int value);
 };
 
 #endif // POTS_H

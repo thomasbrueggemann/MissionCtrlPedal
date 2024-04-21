@@ -6,14 +6,17 @@
 #include "Button2.h"
 #include "Banks.h"
 #include "Pins.h"
+#include "Pots.h"
+#include "PresetStore.h"
+#include "Faders.h"
 
 #define LONG_PRESS_TIME 800
 
 class Footswitches
 {
 public:
-	Footswitches(Banks &banks);
-	void check();
+	Footswitches(Banks &banks, Pots &pots, Faders &faders);
+	void Check();
 
 private:
 	Button2 footswitch1;
@@ -22,6 +25,9 @@ private:
 	Button2 footswitch4;
 
 	Banks &banks;
+	Pots &pots;
+	Faders &faders;
+	PresetStore presetStore;
 
 	void checkFootswitch(Button2 &btn, byte footswitchId);
 

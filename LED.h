@@ -7,7 +7,7 @@
 class LED
 {
 public:
-	void TurnOn(byte ledId);
+	void SwitchTo(byte ledId);
 };
 
 #endif // LED_H

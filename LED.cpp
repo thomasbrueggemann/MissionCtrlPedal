@@ -1,6 +1,6 @@
 #include "LED.h"
 
-void LED::TurnOn(byte ledId)
+void LED::SwitchTo(byte ledId)
 {
 	int ledPins[] = {LED_PIN_1, LED_PIN_2, LED_PIN_3, LED_PIN_4};
 

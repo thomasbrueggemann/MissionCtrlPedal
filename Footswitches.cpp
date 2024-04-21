@@ -1,12 +1,19 @@
 #include "Footswitches.h"
 #include "Button2.h"
 
-Footswitches::Footswitches(Banks &banks)
-	: banks(banks), footswitch1(FOOTSWITCH_PIN_1), footswitch2(FOOTSWITCH_PIN_2), footswitch3(FOOTSWITCH_PIN_3), footswitch4(FOOTSWITCH_PIN_4)
+Footswitches::Footswitches(Banks &banks, Pots &pots, Faders &faders)
+	: presetStore(),
+	  banks(banks),
+	  faders(faders),
+	  pots(pots),
+	  footswitch1(FOOTSWITCH_PIN_1),
+	  footswitch2(FOOTSWITCH_PIN_2),
+	  footswitch3(FOOTSWITCH_PIN_3),
+	  footswitch4(FOOTSWITCH_PIN_4)
 {
 }
 
-void Footswitches::check()
+void Footswitches::Check()
 {
 	checkFootswitch(footswitch1, 0);
 	checkFootswitch(footswitch2, 1);
@@ -36,6 +43,11 @@ void Footswitches::checkFootswitch(Button2 &footswitch, byte footswitchId)
 void Footswitches::handlePress(byte footswitchId)
 {
 	banks.SetPreset(footswitchId);
+
+	Preset preset = presetStore.ReadPreset(banks.GetCurrentBank(), banks.GetCurrentPreset());
+
+	pots.SetToPreset(preset);
+	faders.MoveToPreset(preset);
 };
 
 void Footswitches::handleLongPress(byte footswitchId)

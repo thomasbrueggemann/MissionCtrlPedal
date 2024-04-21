@@ -9,7 +9,7 @@ SettingsButtons::SettingsButtons() : ampswitchButton(AMPSWITCH_BUTTON_PIN), bypa
 	digitalWrite(BYPASS_TYPE_LED_PIN, bypassState);
 }
 
-void SettingsButtons::check()
+void SettingsButtons::Check()
 {
 	checkButton(ampswitchButton);
 	checkButton(bypassButton);

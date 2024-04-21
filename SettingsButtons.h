@@ -12,7 +12,7 @@ class SettingsButtons
 {
 public:
 	SettingsButtons();
-	void check();
+	void Check();
 
 private:
 	Button2 ampswitchButton;
