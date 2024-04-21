@@ -1,12 +1,12 @@
 #include "SettingsButtons.h"
 
-SettingsButtons::SettingsButtons() : ampswitchButton(AMPSWITCH_BUTTON_PIN), bypassButton(BYPASS_BUTTON_PIN)
+SettingsButtons::SettingsButtons() : ampswitchButton(AMPSWITCH_BUTTON_PIN), bypassButton(BYPASS_TYPE_BUTTON_PIN)
 {
 	byte ampSwitchState = EEPROM.read(AMPSWITCH_ADDRESS);
 	digitalWrite(AMPSWITCH_LED_PIN, ampSwitchState);
 
 	byte bypassState = EEPROM.read(BYPASS_ADDRESS);
-	digitalWrite(BYPASS_LED_PIN, bypassState);
+	digitalWrite(BYPASS_TYPE_LED_PIN, bypassState);
 }
 
 void SettingsButtons::check()
@@ -26,9 +26,9 @@ void SettingsButtons::checkButton(Button2 &btn)
 			{
 				toggleStatefulButton(AMPSWITCH_ADDRESS, AMPSWITCH_LED_PIN, AMPSWITCH_RELAY_PIN);
 			}
-			else if (btn.getPin() == BYPASS_BUTTON_PIN)
+			else if (btn.getPin() == BYPASS_TYPE_BUTTON_PIN)
 			{
-				toggleStatefulButton(BYPASS_ADDRESS, BYPASS_LED_PIN, BYPASS_RELAY_PIN);
+				toggleStatefulButton(BYPASS_ADDRESS, BYPASS_TYPE_LED_PIN, BYPASS_TYPE_RELAY_PIN);
 			}
 
 			break;

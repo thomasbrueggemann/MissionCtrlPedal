@@ -5,6 +5,7 @@
 #include "SettingsButtons.h"
 
 #include <Arduino.h>
+#include <SPI.h>
 
 #define BAUD_RATE 115200
 
