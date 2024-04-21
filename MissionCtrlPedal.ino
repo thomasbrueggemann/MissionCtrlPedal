@@ -27,6 +27,6 @@ void setup()
 
 void loop()
 {
-	footswitches.Check();
-	settingsButtons.Check();
+	footswitches.Loop();
+	settingsButtons.Loop();
 }

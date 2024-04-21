@@ -3,7 +3,7 @@
 Pots::Pots()
 {
 	pinMode(SPI_CHIP_SELECT, OUTPUT);
-};
+}
 
 void Pots::SetToPreset(Preset &preset)
 {
@@ -12,7 +12,7 @@ void Pots::SetToPreset(Preset &preset)
 	SetValue(MID, preset.Middle);
 	SetValue(BASS, preset.Bass);
 	SetValue(VOLUME, preset.Cut);
-};
+}
 
 void Pots::SetValue(Pot pot, int value)
 {

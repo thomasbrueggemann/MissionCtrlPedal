@@ -13,7 +13,7 @@ Footswitches::Footswitches(Banks &banks, Pots &pots, Faders &faders)
 {
 }
 
-void Footswitches::Check()
+void Footswitches::Loop()
 {
 	checkFootswitch(footswitch1, 0);
 	checkFootswitch(footswitch2, 1);
@@ -38,7 +38,7 @@ void Footswitches::checkFootswitch(Button2 &footswitch, byte footswitchId)
 			break;
 		}
 	}
-};
+}
 
 void Footswitches::handlePress(byte footswitchId)
 {
@@ -48,7 +48,7 @@ void Footswitches::handlePress(byte footswitchId)
 
 	pots.SetToPreset(preset);
 	faders.MoveToPreset(preset);
-};
+}
 
 void Footswitches::handleLongPress(byte footswitchId)
 {
@@ -58,7 +58,7 @@ void Footswitches::handleLongPress(byte footswitchId)
 	Serial.println(banks.GetCurrentPreset());
 
 	// TODO: implement preset storing
-};
+}
 
 void Footswitches::handleDoublePress(byte footswitchId)
 {
@@ -71,4 +71,4 @@ void Footswitches::handleDoublePress(byte footswitchId)
 		banks.BankUp();
 		break;
 	}
-};
+}

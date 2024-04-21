@@ -11,7 +11,7 @@ Banks::Banks(LED &led, SegmentDisplay &segmentDisplay) : segmentDisplay(segmentD
 void Banks::SetPreset(byte preset)
 {
 	currentPreset = preset;
-	led.TurnOn(currentPreset);
+	led.SwitchTo(currentPreset);
 
 	Serial.print("Preset set to: ");
 	Serial.println(currentPreset);

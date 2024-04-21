@@ -9,7 +9,7 @@ SettingsButtons::SettingsButtons() : ampswitchButton(AMPSWITCH_BUTTON_PIN), bypa
 	digitalWrite(BYPASS_TYPE_LED_PIN, bypassState);
 }
 
-void SettingsButtons::Check()
+void SettingsButtons::Loop()
 {
 	checkButton(ampswitchButton);
 	checkButton(bypassButton);
@@ -44,4 +44,4 @@ void SettingsButtons::toggleStatefulButton(byte address, byte ledPin, byte relay
 
 	digitalWrite(ledPin, state);
 	digitalWrite(relayPin, state);
-};
+}

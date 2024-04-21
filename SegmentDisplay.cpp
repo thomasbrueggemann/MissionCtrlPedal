@@ -9,7 +9,7 @@ SegmentDisplay::SegmentDisplay()
 	pinMode(SEGMENT_E_PIN, OUTPUT);
 	pinMode(SEGMENT_F_PIN, OUTPUT);
 	pinMode(SEGMENT_G_PIN, OUTPUT);
-};
+}
 
 void SegmentDisplay::DisplayNumber(byte number)
 {
@@ -48,13 +48,13 @@ void SegmentDisplay::DisplayNumber(byte number)
 		display9();
 		break;
 	}
-};
+}
 
 void SegmentDisplay::display1(void)
 {
 	digitalWrite(SEGMENT_B_PIN, HIGH);
 	digitalWrite(SEGMENT_C_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display2(void)
 {
@@ -63,7 +63,7 @@ void SegmentDisplay::display2(void)
 	digitalWrite(SEGMENT_G_PIN, HIGH);
 	digitalWrite(SEGMENT_E_PIN, HIGH);
 	digitalWrite(SEGMENT_D_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display3(void)
 {
@@ -73,7 +73,7 @@ void SegmentDisplay::display3(void)
 	digitalWrite(SEGMENT_C_PIN, HIGH);
 	digitalWrite(SEGMENT_D_PIN, HIGH);
 	digitalWrite(SEGMENT_G_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display4(void)
 {
@@ -81,7 +81,7 @@ void SegmentDisplay::display4(void)
 	digitalWrite(SEGMENT_B_PIN, HIGH);
 	digitalWrite(SEGMENT_G_PIN, HIGH);
 	digitalWrite(SEGMENT_C_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display5(void)
 {
@@ -90,7 +90,7 @@ void SegmentDisplay::display5(void)
 	digitalWrite(SEGMENT_G_PIN, HIGH);
 	digitalWrite(SEGMENT_C_PIN, HIGH);
 	digitalWrite(SEGMENT_D_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display6(void)
 {
@@ -100,14 +100,14 @@ void SegmentDisplay::display6(void)
 	digitalWrite(SEGMENT_C_PIN, HIGH);
 	digitalWrite(SEGMENT_D_PIN, HIGH);
 	digitalWrite(SEGMENT_E_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display7(void)
 {
 	digitalWrite(SEGMENT_A_PIN, HIGH);
 	digitalWrite(SEGMENT_B_PIN, HIGH);
 	digitalWrite(SEGMENT_C_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display8(void)
 {
@@ -118,7 +118,7 @@ void SegmentDisplay::display8(void)
 	digitalWrite(SEGMENT_D_PIN, HIGH);
 	digitalWrite(SEGMENT_E_PIN, HIGH);
 	digitalWrite(SEGMENT_F_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::clearDisplay(void)
 {
@@ -129,7 +129,7 @@ void SegmentDisplay::clearDisplay(void)
 	digitalWrite(SEGMENT_D_PIN, LOW);
 	digitalWrite(SEGMENT_E_PIN, LOW);
 	digitalWrite(SEGMENT_F_PIN, LOW);
-};
+}
 
 void SegmentDisplay::display9(void)
 {
@@ -139,7 +139,7 @@ void SegmentDisplay::display9(void)
 	digitalWrite(SEGMENT_C_PIN, HIGH);
 	digitalWrite(SEGMENT_D_PIN, HIGH);
 	digitalWrite(SEGMENT_F_PIN, HIGH);
-};
+}
 
 void SegmentDisplay::display0(void)
 {
@@ -149,4 +149,4 @@ void SegmentDisplay::display0(void)
 	digitalWrite(SEGMENT_D_PIN, HIGH);
 	digitalWrite(SEGMENT_E_PIN, HIGH);
 	digitalWrite(SEGMENT_F_PIN, HIGH);
-};
+}

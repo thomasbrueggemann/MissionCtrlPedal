@@ -8,6 +8,8 @@ class Faders
 public:
 	Faders();
 	void MoveToPreset(Preset &preset);
+	Preset GetCurrentValues();
+	void Loop();
 
 private:
 	// TODO: Add your private member variables here
