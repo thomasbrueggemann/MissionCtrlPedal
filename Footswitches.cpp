@@ -23,8 +23,13 @@ void Footswitches::Loop()
 
 void Footswitches::checkFootswitch(Button2 &footswitch, byte footswitchId)
 {
+	footswitch.loop();
+
 	if (footswitch.wasPressed())
 	{
+		Serial.print("Pressed footswitch ");
+		Serial.println(footswitchId);
+
 		switch (footswitch.read())
 		{
 		case single_click:
@@ -42,6 +47,9 @@ void Footswitches::checkFootswitch(Button2 &footswitch, byte footswitchId)
 
 void Footswitches::handlePress(byte footswitchId)
 {
+	Serial.print("Footswitch pressed: ");
+	Serial.println(footswitchId);
+
 	banks.SetPreset(footswitchId);
 
 	Preset preset = presetStore.ReadPreset(banks.GetCurrentBank(), banks.GetCurrentPreset());

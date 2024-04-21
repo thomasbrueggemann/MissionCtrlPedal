@@ -40,7 +40,7 @@ void SettingsButtons::toggleStatefulButton(byte address, byte ledPin, byte relay
 {
 	byte state = EEPROM.read(address);
 	state = !state;
-	EEPROM.update(address, state);
+	// EEPROM.update(address, state);
 
 	digitalWrite(ledPin, state);
 	digitalWrite(relayPin, state);

@@ -1,6 +1,8 @@
 #ifndef FAKEYTOUCH_H
 #define FAKEYTOUCH_H
 
+#include <Arduino.h>
+
 class FaderTouchSensor
 {
 public:

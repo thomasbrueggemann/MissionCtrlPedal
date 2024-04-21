@@ -1,6 +1,7 @@
 #ifndef FADER_H
 #define FADER_H
 
+#include <Arduino.h>
 #include "FaderTouchSensor.h"
 
 #define TOUCH_SENSOR_THRESHOLD 300
