@@ -8,8 +8,8 @@
 
 | Component                 | Implemented | Tested |
 | ------------------------- | ----------- | ------ |
-| Footswitch tracking       | ✅          |        |
-| Bank navigation           | ✅          |        |
+| Footswitch tracking       | ✅          | ✅     |
+| Bank navigation           | ✅          | ✅     |
 | Preset storage and recall | ✅          |        |
 | Segment Display           | ✅          |        |
 | Preset LEDs               | ✅          |        |
