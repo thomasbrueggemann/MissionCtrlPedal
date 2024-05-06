@@ -29,5 +29,5 @@ void loop()
 {
 	footswitches.Loop();
 	settingsButtons.Loop();
-	//faders.Loop();
+	faders.Loop();
 }

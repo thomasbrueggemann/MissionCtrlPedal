@@ -5,6 +5,7 @@
 #include "FaderTouchSensor.h"
 
 #define TOUCH_SENSOR_THRESHOLD 300
+#define MAX_SPEED 120
 
 class Fader
 {
@@ -23,8 +24,6 @@ private:
 
 	int positionDestination;
 	float speed = 1.0;
-
-	FaderTouchSensor touchSensor;
 
 	void moveFaderUp();
 	void moveFaderDown();

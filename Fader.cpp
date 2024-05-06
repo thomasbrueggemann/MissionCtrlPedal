@@ -1,14 +1,14 @@
 #include "Fader.h"
 
 Fader::Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin)
-	: touchSensor(touchSensorPin, TOUCH_SENSOR_THRESHOLD),
-	  wiperPin(wiperPin),
+	: wiperPin(wiperPin),
 	  touchSensorPin(touchSensorPin),
 	  motorAPin(motorAPin),
 	  motorBPin(motorBPin)
 {
 	analogWrite(motorAPin, 0);
 	analogWrite(motorBPin, 0);
+	Serial.println("Fader created");
 }
 
 void Fader::SetDestination(int position)
@@ -23,14 +23,6 @@ int Fader::GetCurrentPosition()
 
 void Fader::Loop()
 {
-	if (touchSensor.IsTouched())
-	{
-		Serial.println("Touched");
-		stopFader();
-		delay(60);
-		return;
-	}
-
 	/*fader_pos = int((filter_amt * last_fader_pos) + ((1.0 - filter_amt) * int(analogRead(fader) / 4)));
 	if (abs(fader_pos - last_fader_pos) > 1)
 	{
@@ -58,31 +50,36 @@ void Fader::Loop()
 	{
 		speed = 2.25 * abs(positionCurrent - positionDestination) / 256 + 0.2;
 		speed = constrain(speed, -1.0, 1.0);
+
 		if (speed > 0.0)
 		{
-			moveFaderDown();
+			moveFaderUp();
 		}
 	}
+
 	if (positionCurrent < positionDestination)
 	{
 		speed = 2.25 * abs(positionCurrent - positionDestination) / 256 - 0.2;
 		speed = constrain(speed, -1.0, 1.0);
+
 		if (speed > 0.0)
 		{
-			moveFaderUp();
+			moveFaderDown();
 		}
 	}
 }
 
 void Fader::moveFaderUp()
 {
+	Serial.println("Moving fader up");
 	analogWrite(motorAPin, 0);
-	analogWrite(motorBPin, 255);
+	analogWrite(motorBPin, MAX_SPEED);
 }
 
 void Fader::moveFaderDown()
 {
-	analogWrite(motorAPin, 255);
+	Serial.println("Moving fader down");
+	analogWrite(motorAPin, MAX_SPEED);
 	analogWrite(motorBPin, 0);
 }
 
