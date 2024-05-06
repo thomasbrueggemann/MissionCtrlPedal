@@ -2,6 +2,8 @@
 #define FADERS_H
 
 #include "Preset.h"
+#include "Fader.h"
+#include "Pins.h"
 
 class Faders
 {
@@ -12,7 +14,11 @@ public:
 	void Loop();
 
 private:
-	// TODO: Add your private member variables here
+	Fader boostFader;
+	Fader bassFader;
+	Fader middleFader;
+	Fader trebleFader;
+	Fader cutFader;
 };
 
 #endif // FADERS_H

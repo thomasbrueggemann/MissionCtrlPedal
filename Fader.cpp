@@ -25,6 +25,7 @@ void Fader::Loop()
 {
 	if (touchSensor.IsTouched())
 	{
+		Serial.println("Touched");
 		stopFader();
 		delay(60);
 		return;
@@ -42,6 +43,10 @@ void Fader::Loop()
 	}*/
 
 	int positionCurrent = GetCurrentPosition();
+	Serial.print("Current position: ");
+	Serial.println(positionCurrent);
+	Serial.print("Destination position: ");
+	Serial.println(positionDestination);
 
 	if (abs(positionCurrent - positionDestination) <= 4)
 	{

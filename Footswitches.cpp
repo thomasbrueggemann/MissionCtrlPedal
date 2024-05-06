@@ -11,6 +11,17 @@ Footswitches::Footswitches(Banks &banks, Pots &pots, Faders &faders)
 	  footswitch3(FOOTSWITCH_PIN_3),
 	  footswitch4(FOOTSWITCH_PIN_4)
 {
+	footswitch1.setLongClickTime(LONG_PRESS_TIME);
+	footswitch1.setDoubleClickTime(DOUBLE_CLICK_TIME);
+
+	footswitch2.setLongClickTime(LONG_PRESS_TIME);
+	footswitch2.setDoubleClickTime(DOUBLE_CLICK_TIME);
+
+	footswitch3.setLongClickTime(LONG_PRESS_TIME);
+	footswitch3.setDoubleClickTime(DOUBLE_CLICK_TIME);
+
+	footswitch4.setLongClickTime(LONG_PRESS_TIME);
+	footswitch4.setDoubleClickTime(DOUBLE_CLICK_TIME);
 }
 
 void Footswitches::Loop()
@@ -27,8 +38,7 @@ void Footswitches::checkFootswitch(Button2 &footswitch, byte footswitchId)
 
 	if (footswitch.wasPressed())
 	{
-		Serial.print("Pressed footswitch ");
-		Serial.println(footswitchId);
+		Serial.println("---");
 
 		switch (footswitch.read())
 		{
@@ -53,6 +63,7 @@ void Footswitches::handlePress(byte footswitchId)
 	banks.SetPreset(footswitchId);
 
 	Preset preset = presetStore.ReadPreset(banks.GetCurrentBank(), banks.GetCurrentPreset());
+	preset.Print();
 
 	pots.SetToPreset(preset);
 	faders.MoveToPreset(preset);

@@ -10,7 +10,8 @@
 #include "PresetStore.h"
 #include "Faders.h"
 
-#define LONG_PRESS_TIME 800
+#define LONG_PRESS_TIME 1000
+#define DOUBLE_CLICK_TIME 700
 
 class Footswitches
 {
