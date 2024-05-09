@@ -8,7 +8,6 @@ Fader::Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin)
 {
 	analogWrite(motorAPin, 0);
 	analogWrite(motorBPin, 0);
-	Serial.println("Fader created");
 }
 
 void Fader::SetDestination(int position)
@@ -18,32 +17,26 @@ void Fader::SetDestination(int position)
 
 int Fader::GetCurrentPosition()
 {
-	return int(analogRead(wiperPin) / 4);
+	int position = int(analogRead(wiperPin));
+	position = map(position, 0, 660, 0, 255);
+	return position;
 }
 
 void Fader::Loop()
 {
-	/*fader_pos = int((filter_amt * last_fader_pos) + ((1.0 - filter_amt) * int(analogRead(fader) / 4)));
-	if (abs(fader_pos - last_fader_pos) > 1)
-	{
-		Serial.println(fader_pos);
-		if (motor_release_state == false)
-		{
-			go_to_position(saved_positions[current_saved_position]);
-		}
-		last_fader_pos = fader_pos;
-	}*/
-
 	int positionCurrent = GetCurrentPosition();
-	Serial.print("Current position: ");
-	Serial.println(positionCurrent);
-	Serial.print("Destination position: ");
-	Serial.println(positionDestination);
 
 	if (abs(positionCurrent - positionDestination) <= 4)
 	{
 		stopFader();
 		return;
+	}
+	else
+	{
+		Serial.print("Current position: ");
+		Serial.println(positionCurrent);
+		Serial.print("Destination position: ");
+		Serial.println(positionDestination);
 	}
 
 	if (positionCurrent > positionDestination)
@@ -53,7 +46,7 @@ void Fader::Loop()
 
 		if (speed > 0.0)
 		{
-			moveFaderUp();
+			moveFaderDown();
 		}
 	}
 
@@ -64,21 +57,19 @@ void Fader::Loop()
 
 		if (speed > 0.0)
 		{
-			moveFaderDown();
+			moveFaderUp();
 		}
 	}
 }
 
 void Fader::moveFaderUp()
 {
-	Serial.println("Moving fader up");
 	analogWrite(motorAPin, 0);
 	analogWrite(motorBPin, MAX_SPEED);
 }
 
 void Fader::moveFaderDown()
 {
-	Serial.println("Moving fader down");
 	analogWrite(motorAPin, MAX_SPEED);
 	analogWrite(motorBPin, 0);
 }

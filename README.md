@@ -16,7 +16,7 @@
 | Amp Switching             | ✅          |        |
 | Bypass Setting            | ✅          |        |
 | Digital Pot Setting       | ✅          |        |
-| Fader position set        |             |        |
+| Fader position set        | ✅          | ✅     |
 | Fader capacitative touch  |             |        |
-| Fader preset saving       |             |        |
+| Fader preset saving       | ✅          |        |
 | Settings Button           | ✅          |        |

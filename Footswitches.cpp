@@ -76,7 +76,10 @@ void Footswitches::handleLongPress(byte footswitchId)
 	Serial.print(" and preset ");
 	Serial.println(banks.GetCurrentPreset());
 
-	// TODO: implement preset storing
+	Preset preset = faders.GetCurrentValues();
+	preset.Print();
+
+	presetStore.WritePreset(banks.GetCurrentBank(), banks.GetCurrentPreset(), preset);
 }
 
 void Footswitches::handleDoublePress(byte footswitchId)

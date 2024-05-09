@@ -5,7 +5,7 @@
 #include "FaderTouchSensor.h"
 
 #define TOUCH_SENSOR_THRESHOLD 300
-#define MAX_SPEED 120
+#define MAX_SPEED 183
 
 class Fader
 {

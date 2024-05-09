@@ -14,10 +14,10 @@ public:
 	void Loop();
 
 private:
-	/*Fader boostFader;
+	Fader boostFader;
 	Fader bassFader;
 	Fader middleFader;
-	Fader trebleFader;*/
+	Fader trebleFader;
 	Fader cutFader;
 };
 
