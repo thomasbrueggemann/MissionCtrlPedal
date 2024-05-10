@@ -5,6 +5,7 @@
 #include "Pots.h"
 
 #define MAX_SPEED 255
+#define LIVE_MODE_UPDATE_INTERVAL 150
 
 class Fader
 {

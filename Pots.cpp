@@ -27,7 +27,7 @@ void Pots::SetValue(Pot pot, int value)
 	SPI.transfer(pot);
 	SPI.transfer(value);
 
-	delay(100);
+	delay(50);
 
 	digitalWrite(SPI_CHIP_SELECT, HIGH);
 }

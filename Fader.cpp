@@ -69,7 +69,10 @@ void Fader::Loop()
 
 void Fader::liveUpdatePotValue(int positionCurrent)
 {
-	if (millis() - liveModeLastUpdateTime >= 1000 && positionCurrent != liveModeLastPosition)
+	bool updateIntervalPassed = millis() - liveModeLastUpdateTime >= LIVE_MODE_UPDATE_INTERVAL;
+	bool positionChanged = abs(positionCurrent - liveModeLastPosition) > 4;
+
+	if (updateIntervalPassed && positionChanged)
 	{
 		pots.SetValue(faderPot, positionCurrent);
 		liveModeLastUpdateTime = millis();

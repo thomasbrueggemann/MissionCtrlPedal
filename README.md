@@ -10,13 +10,13 @@
 | ------------------------- | ----------- | ------ |
 | Footswitch tracking       | ✅          | ✅     |
 | Bank navigation           | ✅          | ✅     |
-| Preset storage and recall | ✅          |        |
+| Preset storage and recall | ✅          | ✅     |
 | Segment Display           | ✅          |        |
 | Preset LEDs               | ✅          |        |
 | Amp Switching             | ✅          |        |
-| Bypass Setting            | ✅          |        |
+| Bypass Switching          | ✅          |        |
 | Digital Pot Setting       | ✅          |        |
 | Fader position set        | ✅          | ✅     |
-| Fader live updates        |             |        |
+| Fader live updates        | ✅          | ✅     |
 | Fader preset saving       | ✅          | ✅     |
 | Settings Button           | ✅          |        |
