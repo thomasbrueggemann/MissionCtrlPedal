@@ -17,6 +17,7 @@ class Footswitches
 {
 public:
 	Footswitches(Banks &banks, Pots &pots, Faders &faders);
+	void Begin();
 	void Loop();
 
 private:

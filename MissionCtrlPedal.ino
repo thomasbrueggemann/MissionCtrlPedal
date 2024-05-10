@@ -23,6 +23,8 @@ void setup()
 {
 	Serial.begin(BAUD_RATE);
 	SPI.begin();
+
+	footswitches.Begin();
 }
 
 void loop()

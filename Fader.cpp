@@ -8,11 +8,13 @@ Fader::Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin)
 {
 	analogWrite(motorAPin, 0);
 	analogWrite(motorBPin, 0);
+	destinationReached = true;
 }
 
 void Fader::SetDestination(int position)
 {
 	positionDestination = constrain(position, 0, 255);
+	destinationReached = false;
 }
 
 int Fader::GetCurrentPosition()
@@ -24,19 +26,19 @@ int Fader::GetCurrentPosition()
 
 void Fader::Loop()
 {
-	int positionCurrent = GetCurrentPosition();
-
-	if (abs(positionCurrent - positionDestination) <= 4)
+	if (destinationReached)
 	{
 		stopFader();
 		return;
 	}
-	else
+
+	int positionCurrent = GetCurrentPosition();
+
+	if (abs(positionCurrent - positionDestination) <= 4)
 	{
-		Serial.print("Current position: ");
-		Serial.println(positionCurrent);
-		Serial.print("Destination position: ");
-		Serial.println(positionDestination);
+		destinationReached = true;
+		stopFader();
+		return;
 	}
 
 	if (positionCurrent > positionDestination)

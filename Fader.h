@@ -2,10 +2,9 @@
 #define FADER_H
 
 #include <Arduino.h>
-#include "FaderTouchSensor.h"
 
-#define TOUCH_SENSOR_THRESHOLD 300
-#define MAX_SPEED 183
+#define TOUCH_SENSOR_THRESHOLD 12
+#define MAX_SPEED 255
 
 class Fader
 {
@@ -21,6 +20,7 @@ private:
 	int motorBPin;
 	int wiperPin;
 	int touchSensorPin;
+	bool destinationReached;
 
 	int positionDestination;
 	float speed = 1.0;

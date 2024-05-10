@@ -24,6 +24,15 @@ Footswitches::Footswitches(Banks &banks, Pots &pots, Faders &faders)
 	footswitch4.setDoubleClickTime(DOUBLE_CLICK_TIME);
 }
 
+void Footswitches::Begin()
+{
+	Preset preset = presetStore.ReadPreset(banks.GetCurrentBank(), banks.GetCurrentPreset());
+	preset.Print();
+
+	pots.SetToPreset(preset);
+	faders.MoveToPreset(preset);
+}
+
 void Footswitches::Loop()
 {
 	checkFootswitch(footswitch1, 0);
