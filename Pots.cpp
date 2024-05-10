@@ -11,11 +11,16 @@ void Pots::SetToPreset(Preset &preset)
 	SetValue(TREBLE, preset.Treble);
 	SetValue(MID, preset.Middle);
 	SetValue(BASS, preset.Bass);
-	SetValue(VOLUME, preset.Cut);
+	SetValue(CUT, preset.Cut);
 }
 
 void Pots::SetValue(Pot pot, int value)
 {
+	Serial.print("Setting pot ");
+	Serial.print(pot);
+	Serial.print(" to ");
+	Serial.println(value);
+
 	digitalWrite(SPI_CHIP_SELECT, LOW);
 	delay(100);
 

@@ -1,10 +1,12 @@
 #include "Fader.h"
 
-Fader::Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin)
+Fader::Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin, Pots &pots, Pot faderPot)
 	: wiperPin(wiperPin),
 	  touchSensorPin(touchSensorPin),
 	  motorAPin(motorAPin),
-	  motorBPin(motorBPin)
+	  motorBPin(motorBPin),
+	  pots(pots),
+	  faderPot(faderPot)
 {
 	analogWrite(motorAPin, 0);
 	analogWrite(motorBPin, 0);
@@ -26,13 +28,15 @@ int Fader::GetCurrentPosition()
 
 void Fader::Loop()
 {
+	int positionCurrent = GetCurrentPosition();
+
 	if (destinationReached)
 	{
+		liveUpdatePotValue(positionCurrent);
+
 		stopFader();
 		return;
 	}
-
-	int positionCurrent = GetCurrentPosition();
 
 	if (abs(positionCurrent - positionDestination) <= 4)
 	{
@@ -61,6 +65,16 @@ void Fader::Loop()
 		{
 			moveFaderUp();
 		}
+	}
+}
+
+void Fader::liveUpdatePotValue(int positionCurrent)
+{
+	if (millis() - liveModeLastUpdateTime >= 1000 && positionCurrent != liveModeLastPosition)
+	{
+		pots.SetValue(faderPot, positionCurrent);
+		liveModeLastUpdateTime = millis();
+		liveModeLastPosition = positionCurrent;
 	}
 }
 

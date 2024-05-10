@@ -11,7 +11,7 @@ enum Pot
 	TREBLE = 1,
 	MID = 2,
 	BASS = 3,
-	VOLUME = 4
+	CUT = 4
 };
 
 class Pots

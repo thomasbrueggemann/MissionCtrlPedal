@@ -4,11 +4,12 @@
 #include "Preset.h"
 #include "Fader.h"
 #include "Pins.h"
+#include "Pots.h"
 
 class Faders
 {
 public:
-	Faders();
+	Faders(Pots &pots);
 	void MoveToPreset(Preset &preset);
 	Preset GetCurrentValues();
 	void Loop();
@@ -19,6 +20,7 @@ private:
 	Fader middleFader;
 	Fader trebleFader;
 	Fader cutFader;
+	Pots &pots;
 };
 
 #endif // FADERS_H

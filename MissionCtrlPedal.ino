@@ -13,7 +13,7 @@
 
 LED leg;
 Pots pots;
-Faders faders;
+Faders faders(pots);
 SegmentDisplay segmentDisplay;
 Banks banks(leg, segmentDisplay);
 Footswitches footswitches(banks, pots, faders);
