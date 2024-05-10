@@ -4,13 +4,12 @@
 #include <Arduino.h>
 #include "Pots.h"
 
-#define TOUCH_SENSOR_THRESHOLD 12
 #define MAX_SPEED 255
 
 class Fader
 {
 public:
-	Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin, Pots &pots, Pot faderPot);
+	Fader(int wiperPin, int motorAPin, int motorBPin, Pots &pots, Pot faderPot);
 
 	void SetDestination(int position);
 	int GetCurrentPosition();
@@ -20,7 +19,6 @@ private:
 	int motorAPin;
 	int motorBPin;
 	int wiperPin;
-	int touchSensorPin;
 	Pots &pots;
 	Pot faderPot;
 

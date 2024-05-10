@@ -1,8 +1,7 @@
 #include "Fader.h"
 
-Fader::Fader(int wiperPin, int touchSensorPin, int motorAPin, int motorBPin, Pots &pots, Pot faderPot)
+Fader::Fader(int wiperPin, int motorAPin, int motorBPin, Pots &pots, Pot faderPot)
 	: wiperPin(wiperPin),
-	  touchSensorPin(touchSensorPin),
 	  motorAPin(motorAPin),
 	  motorBPin(motorBPin),
 	  pots(pots),
